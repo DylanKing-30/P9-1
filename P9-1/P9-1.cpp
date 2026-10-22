@@ -16,8 +16,11 @@ int countVowels(string str) {
 }
 
 int main() {
-	cout << "AEIOUaeiou = " << countVowels("AEIOUaeiou") << endl;
-	cout << "This is a test for SHOUTING! = " << countVowels("This is a test for SHOUTING!") << endl;
-	cout << "qwertyuiopasdfghjklzxcvbnm = " << countVowels("qwertyuiopasdfghjklzxcvbnm") << endl;
-	cout << "shy myrrh = " << countVowels("shy myrrh") << endl;
+	string input;
+	while (true) {
+		cout << "Enter a string or Q to quit: ";
+		getline(cin, input);
+		if (input == "Q") break;
+		cout << "Vowel count: " << countVowels(input) << endl;
+	}
 }
