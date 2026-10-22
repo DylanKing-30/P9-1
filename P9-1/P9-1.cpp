@@ -5,13 +5,19 @@
 #include <string>
 using namespace std;
 
-int countCharacter(string str) {
-	return str.length();
+int countVowels(string str) {
+	int vowel_count = 0;
+	for (int i = 0; i < str.length(); i++) {
+		if (tolower(str[i]) == 'a' || tolower(str[i]) == 'e' || tolower(str[i]) == 'i' || tolower(str[i]) == 'o' || tolower(str[i]) == 'u') {
+			vowel_count++;
+		}
+	}
+	return vowel_count;
 }
 
 int main() {
-	cout << "Hello, world! = " << countCharacter("Hello, world!") << endl;
-	cout << "a b c = " << countCharacter("a b c") << endl;
-	cout << "' ' = " << countCharacter(" ") << endl;
-	cout << "a z, a = " << countCharacter("a z, a") << endl;
+	cout << "AEIOUaeiou = " << countVowels("AEIOUaeiou") << endl;
+	cout << "This is a test for SHOUTING! = " << countVowels("This is a test for SHOUTING!") << endl;
+	cout << "qwertyuiopasdfghjklzxcvbnm = " << countVowels("qwertyuiopasdfghjklzxcvbnm") << endl;
+	cout << "shy myrrh = " << countVowels("shy myrrh") << endl;
 }
